@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { Blog } from './pages/Blog'
-import { Post } from './pages/Post'
+import { Posts } from './pages/Posts'
 import { DefaultLayout } from './layouts/DefaultLayout'
 
 export function Router() {
@@ -8,7 +8,7 @@ export function Router() {
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
         <Route path="/" element={<Blog />} />
-        <Route path="/post" element={<Post />} />
+        <Route path="/post" element={<Posts />} />
       </Route>
     </Routes>
   )
