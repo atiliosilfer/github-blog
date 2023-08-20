@@ -1,5 +1,4 @@
 import { ProfileContainer, ProfileFooter, ProfileTitle } from './style'
-import ProfileImage from '../../../../assets/perfil.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faBuilding,
@@ -9,31 +8,42 @@ import {
 import { faGithub } from '@fortawesome/fontawesome-free-brands'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { TopicItem } from '../../../../components/TopicItem'
+import { useEffect, useState } from 'react'
+import { User, Users } from '../../../../services/Api'
 
 export function Profile() {
+  const [user, setUser] = useState<User>({} as User)
+
+  useEffect(() => {
+    Users.single().then((response: User) => {
+      setUser(response)
+    })
+  }, [])
+
   return (
     <ProfileContainer>
       <div>
-        <img src={ProfileImage} alt="profile image" width={144} height={144} />
+        <img
+          src={user.avatar_url}
+          alt="profile image"
+          width={144}
+          height={144}
+        />
       </div>
       <div>
         <ProfileTitle>
-          <h2>Atílio Ferreira</h2>
-          <a href="https://www.github.com">
+          <h2>{user.name}</h2>
+          <a href={user?.html_url}>
             GITHUB <FontAwesomeIcon icon={faUpRightFromSquare} />
           </a>
         </ProfileTitle>
 
-        <p>
-          Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-          viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
-          pulvinar vel mass.
-        </p>
+        <p>{user.bio}</p>
 
         <ProfileFooter>
-          <TopicItem icon={faGithub as IconProp} description="atiliosilfer" />
-          <TopicItem icon={faBuilding} description="dti digital" />
-          <TopicItem icon={faUserGroup} description="32 seguidores" />
+          <TopicItem icon={faGithub as IconProp} description={user.login} />
+          <TopicItem icon={faBuilding} description={user.company} />
+          <TopicItem icon={faUserGroup} description={user.followers} />
         </ProfileFooter>
       </div>
     </ProfileContainer>

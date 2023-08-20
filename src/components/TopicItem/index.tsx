@@ -5,7 +5,7 @@ import { defaultTheme } from '../../styles/themes/default'
 
 interface TopicItemProps {
   icon: IconProp
-  description: string
+  description: string | number
 }
 
 export function TopicItem({ icon, description }: TopicItemProps) {
