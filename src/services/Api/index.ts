@@ -20,6 +20,8 @@ export type Issue = {
   title: string
   body: string
   created_at: string
+  html_url: string
+  comments: number
 }
 
 export const Issues = {
