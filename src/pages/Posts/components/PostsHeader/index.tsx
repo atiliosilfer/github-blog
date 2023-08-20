@@ -11,12 +11,21 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { TopicItem } from '../../../../components/TopicItem'
 import { Issue } from '../../../../services/Api'
 import { NavLink } from 'react-router-dom'
+import { formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
 
 interface PostsHeaderProps {
   issueData: Issue
 }
 
 export function PostsHeader({ issueData }: PostsHeaderProps) {
+  const formatedDate =
+    issueData.created_at &&
+    formatDistanceToNow(new Date(issueData.created_at), {
+      locale: ptBR,
+      addSuffix: true,
+    })
+
   return (
     <PostsHeaderContainer>
       <Header>
@@ -32,7 +41,7 @@ export function PostsHeader({ issueData }: PostsHeaderProps) {
 
       <Footer>
         <TopicItem icon={faGithub as IconProp} description={'atiliosilfer'} />
-        <TopicItem icon={faCalendarDay} description={issueData.created_at} />
+        <TopicItem icon={faCalendarDay} description={formatedDate} />
         <TopicItem
           icon={faComment}
           description={`${issueData.comments} comentários`}

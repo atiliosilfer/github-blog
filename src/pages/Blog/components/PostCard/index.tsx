@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { PostCardContainer } from './style'
+import { formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
 
 interface PostCardProps {
   title: string
@@ -24,7 +26,12 @@ export function PostCard({
     <PostCardContainer onClick={handleClickPost}>
       <div>
         <h2>{title}</h2>
-        <span>{createdAt}</span>
+        <span>
+          {formatDistanceToNow(new Date(createdAt), {
+            addSuffix: true,
+            locale: ptBR,
+          })}
+        </span>
       </div>
 
       <p>{description}</p>
