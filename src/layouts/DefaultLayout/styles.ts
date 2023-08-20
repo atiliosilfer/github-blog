@@ -6,6 +6,6 @@ export const LayoutContainer = styled.div`
 `
 
 export const OutletContainer = styled.div`
-  max-width: 864px;
+  width: 864px;
   margin: 0px auto;
 `

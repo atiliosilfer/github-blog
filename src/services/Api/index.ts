@@ -14,14 +14,25 @@ export const Users = {
   single: async (): Promise<User> => (await get(`/users/atiliosilfer`)).data,
 }
 
+export type Issue = {
+  id: number
+  number: number
+  title: string
+  body: string
+  created_at: string
+}
+
 export const Issues = {
-  index: async () => await get('/repos/atiliosilfer/github-blog/issues/'),
-  single: async (id: number) =>
-    await get(`/repos/atiliosilfer/github-blog/issues/${id}`),
-  searchByName: async (issueName: string) =>
-    await get(`/search/issues/`, {
-      params: {
-        q: `${issueName} repo:atiliosilfer/github-blog`,
-      },
-    }),
+  index: async (): Promise<Issue[]> =>
+    (await get('/repos/atiliosilfer/github-blog/issues')).data,
+  single: async (number: number): Promise<Issue> =>
+    (await get(`/repos/atiliosilfer/github-blog/issues/${number}`)).data,
+  searchByName: async (issueName: string): Promise<{ items: Issue[] }> =>
+    (
+      await get(`/search/issues`, {
+        params: {
+          q: `${issueName} repo:atiliosilfer/github-blog`,
+        },
+      })
+    ).data,
 }
