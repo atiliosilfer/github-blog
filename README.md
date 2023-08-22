@@ -1,6 +1,6 @@
 # Github blog
 
-Esse é um projeto de estudos, desenvolvido totalmente do zero a partir de um projeto figma disponibilizado no curso de ReactJS da Rocketseat
+Esse é um projeto de estudos, desenvolvido totalmente do zero a partir de um projeto figma disponibilizado no curso de ReactJS da Rocketseat com o objetivo de aplicar **integração com API`s**
 
 link: [https://github-blog-atiliosilfer.vercel.app](https://github-blog-atiliosilfer.vercel.app)
 
