@@ -1,27 +1,43 @@
-# React + TypeScript + Vite
+# Github blog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esse é um projeto de estudos, desenvolvido totalmente do zero a partir de um projeto figma disponibilizado no curso de ReactJS da Rocketseat
 
-Currently, two official plugins are available:
+link: [https://github-blog-atiliosilfer.vercel.app](https://github-blog-atiliosilfer.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Conceitos estudados durante esse projeto:
+ - React
+ - HTML & CSS;
+ - Typescript;
+ - Axios;
+ - Integração com API (API do github);
+ - CSS-in-JS framework (styled-components);
+ - react-router-dom;
+ - react-hook-form;
 
-## Expanding the ESLint configuration
+## 🚀 Começando
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
 
-- Configure the top-level `parserOptions` property like this:
+### 📋 Pré-requisitos
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+Para iniciar o projeto é necessário ter o [Node.js](https://nodejs.org/en) instalado em sua maquina! Recomendado a versão LTS
+
+### 🔧 Instalação
+
+Após clonar esse repositório na pasta do projeto é necessário rodar o seguinte comando no terminal para baixar as dependencias do projeto:
+
+```
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Após instalar as dependencias basta iniciar o projeto utilizando o comando abaixo:
+
+```
+npm run dev
+```
+
+O sistema é bem simples, ele mostra as issues desse repositório como se fossem posts, também é possível fazer uma busca por posts, e ao clicar em algum post será mostrado informações mais especificas sobre o mesmo.
+
+Segue imagens do projeto:
+![image](https://github.com/atiliosilfer/github-blog/assets/42559266/1d5d8dd7-53b5-4653-91ba-97d26d21ce6a)
+![image](https://github.com/atiliosilfer/github-blog/assets/42559266/a4bff47d-8c51-4603-8cb8-3818ce5698e7)
